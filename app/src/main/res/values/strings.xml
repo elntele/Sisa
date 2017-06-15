@@ -2,8 +2,8 @@
     <string name="app_name">Sisa</string>
 
     <!-- Strings related to login -->
-    <string name="placeholder_email">Email</string>
-    <string name="placeholder_password">Senha</string>
-    <string name="action_sign_in">Entrar</string>
-    <string name="action_register">Cadastre-se</string>
+    <string name="email_edit_text">Email</string>
+    <string name="password_edit_text">Senha</string>
+    <string name="sign_in_button">Entrar</string>
+    <string name="register_button">Cadastre-se</string>
 </resources>
