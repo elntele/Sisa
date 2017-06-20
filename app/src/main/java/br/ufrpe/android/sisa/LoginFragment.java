@@ -1,5 +1,6 @@
 package br.ufrpe.android.sisa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,10 +17,10 @@ import android.widget.EditText;
 public class LoginFragment extends Fragment{
 
 
-    public EditText mEmailField;
-    public EditText mPasswordField;
-    public Button mButtonSignIn;
-    public Button mButtonGetOut;
+    private EditText mEmail;
+    private EditText mSenha;
+    private Button mBtLogar;
+    private Button mBtCadastrar;
 
     @Override
     public void onCreate(Bundle saveInstanceState){
@@ -28,13 +29,20 @@ public class LoginFragment extends Fragment{
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle saveInstanceState){
-        View v = inflater.inflate(R.layout.fragment_login, parent, false);
+        View view = inflater.inflate(R.layout.fragment_login, parent, false);
 
-        mEmailField = (EditText) v.findViewById(R.id.email_edit_text);
-        mPasswordField = (EditText) v.findViewById(R.id.password_edit_text);
-        mButtonSignIn = (Button) v.findViewById(R.id.sign_in_button);
-        mButtonGetOut = (Button) v.findViewById(R.id.get_out_button);
-        return v;
+        mEmail = (EditText) view.findViewById(R.id.email_edit_text);
+        mSenha = (EditText) view.findViewById(R.id.senha_edit_text);
+
+        mBtLogar = (Button) view.findViewById(R.id.login_button);
+        mBtCadastrar = (Button) view.findViewById(R.id.cadastro_button);
+        mBtCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui deve conter o código que quando acionar o botão cadastrar ele deverá ir para tela de cadastro.
+            }
+        });
+        return view;
     }
 
 }

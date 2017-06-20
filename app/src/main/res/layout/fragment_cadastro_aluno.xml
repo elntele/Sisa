@@ -3,29 +3,25 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:orientation="vertical"
-             tools:context="br.ufrpe.android.sisa.CadastroAlunoFragment">
+             android:paddingBottom="16dp"
+             android:paddingLeft="16dp"
+             android:paddingRight="16dp"
+             android:paddingTop="16dp">
+
 
     <!-- TODO: Update blank fragment layout -->
 
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/nome_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Nome"/>
+        android:hint="Nome Completo"/>
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Sobrenome"/>
-
-    <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/cpf_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="CPF"
@@ -33,22 +29,51 @@
         android:inputType="number"/>
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/senha_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="cadastre uma senha"
+        android:hint="Senha"
         android:ems="10"
         android:inputType="textPassword"/>
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/email_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email_edit_text"
         android:ems="10"
         android:inputType="textEmailAddress"/>
 
+    <EditText
+        android:id="@+id/ano_periodo_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ano e Período de Ingresso"
+        android:ems="10"
+        android:inputType="numberDecimal"/>
 
+    <EditText
+        android:id="@+id/area_preferencia_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Área de Preferência:ARC, Ensiso ou FC"/>
+
+    <EditText
+        android:id="@+id/periodo_tracando_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Qtd. de Períodos trancados"
+        android:inputType="number"/>
+
+    <SeekBar
+        android:id="@+id/hora_estudo_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Horas de estudo"
+        android:max="20"/>
 
 
 </LinearLayout>
