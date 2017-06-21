@@ -13,7 +13,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_aluno);
 
         FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+        Fragment fragment = fm.findFragmentById(R.id.fragment_container_cadastro_aluno);
 
         if (fragment==null){
             fragment = new CadastroAlunoFragment();

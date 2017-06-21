@@ -53,14 +53,6 @@
         android:inputType="numberDecimal"/>
 
     <EditText
-        android:id="@+id/area_preferencia_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Área de Preferência:ARC, Ensiso ou FC"/>
-
-    <EditText
         android:id="@+id/periodo_tracando_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,12 +60,45 @@
         android:hint="Qtd. de Períodos trancados"
         android:inputType="number"/>
 
-    <SeekBar
-        android:id="@+id/hora_estudo_seek_bar"
+    <EditText
+        android:id="@+id/qts_h_semanal_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="Horas de estudo"
-        android:max="20"/>
+        android:ems="10"
+        android:hint="Qtd de Horas semanais para estudo"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/area_preferencia_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Selecione a sua área de preferência"/>
+
+    <CheckBox
+        android:id="@+id/box_ensiso_check_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ensiso"/>
+
+    <CheckBox
+        android:id="@+id/box_arq_check_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ARQ"/>
+
+    <CheckBox
+        android:id="@+id/box_fc_check_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FC"/>
+
+    <TextView
+        android:id="@+id/deslise_tela_text_view"
+        android:layout_width="match_parent"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:text="desloque a tela para a esquerda assim que terminar o preenchimento do cadastro."/>
 
 
 </LinearLayout>

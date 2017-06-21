@@ -40,6 +40,8 @@ public class LoginFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 //Aqui deve conter o código que quando acionar o botão cadastrar ele deverá ir para tela de cadastro.
+                Intent it = new Intent(getActivity(), CadastroAlunoFragment.class);
+                startActivity(it);
             }
         });
         return view;
