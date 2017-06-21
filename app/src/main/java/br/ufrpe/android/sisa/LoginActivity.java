@@ -1,30 +1,42 @@
 package br.ufrpe.android.sisa;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 /**
- * Created by LENOVO on 15/06/2017.
+ * Created by jorge on 15/06/2017.
  */
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity{
 
+
+    private EditText mEmail;
+    private EditText mSenha;
+    private Button mBtLogar;
+    private Button mBtCadastrar;
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle saveInstanceState){
+        super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_login);
 
-        FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragment_container_login);
-        //parte do código onde o new LoginFragment que é uma nova instacia de Login fragmente
-        //é colocada dentri do activity_login.... em LoginFragmente é inflado o fragment_login.xml
-        //e aqui ele é cologado dentro do conteiner
-        if (fragment == null){
-            fragment = new LoginFragment();
-            fm.beginTransaction().add(R.id.fragment_container_login, fragment).commit();
-        }
+        mEmail = (EditText) findViewById(R.id.email_edit_text);
+        mSenha = (EditText) findViewById(R.id.senha_edit_text);
+        mBtLogar = (Button) findViewById(R.id.login_button);
+        mBtCadastrar = (Button) findViewById(R.id.cadastro_button);
+        mBtCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui deve conter o código que quando acionar o botão cadastrar ele deverá ir para tela de cadastro.
+                Intent intent = new Intent(LoginActivity.this, CadastroAlunoActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
 }
