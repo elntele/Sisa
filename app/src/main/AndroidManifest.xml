@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".CadastroAlunoActivity"></activity>
+        <activity android:name=".CadastroAlunoActivity"/>
+        <activity android:name=".Cadastro2AlunoActivity">
+        </activity>
     </application>
 
 </manifest>
