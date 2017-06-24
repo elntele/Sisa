@@ -35,6 +35,10 @@ public class Disciplina {
         mQuinta = quinta;
         mSexta = sexta;
     }
+    @Override
+    public String toString() {
+        return mNome;
+    }
 
     public UUID getId() {
         return mId;

@@ -14,16 +14,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
-            <intent-filter>
+        <activity android:name=".LoginActivity"/><!-- tem que retirar o / daqui -->
+           <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
+
+
+        </activity>-->
         <activity android:name=".CadastroAlunoActivity"/>
-        <activity android:name=".Cadastro2AlunoActivity">
+        <activity android:name=".CadastroDisciplinaActivity">
         </activity>
+        <activity android:name=".DisciplinaListActivity"><!-- tem que voltar o / pra cá -->
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+    </activity>
+
     </application>
 
 </manifest>
