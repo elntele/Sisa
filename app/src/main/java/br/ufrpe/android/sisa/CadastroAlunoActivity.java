@@ -1,6 +1,7 @@
 package br.ufrpe.android.sisa;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -52,6 +53,16 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         mHorasEstudoExtraClasse = (EditText) findViewById(R.id.qts_h_semanal_edit_text);
         mEscolhaAreaDePreferencia=(TextView) findViewById(R.id.area_preferencia_text_view);
         mBtProximo = (Button) findViewById(R.id.proximo_button);
+
+
+        mBtProximo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui deve conter o código que quando acionar o botão cadastrar ele deverá ir para tela de cadastro.
+                Intent intent = new Intent(CadastroAlunoActivity.this, DisciplinaListActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
