@@ -9,7 +9,7 @@ import java.util.UUID;
 public class Disciplina {
     private UUID mId;
     private String mNome;
-    private int mCodigo;
+    private String mCodigo;
     private String mPeriodo;
     private int mSemestre;
     private String mArea;
@@ -20,8 +20,17 @@ public class Disciplina {
     private String mSexta;
     private String[] mDiaHora= new String[5];
 
+    public boolean isSolved() {
+        return solved;
+    }
 
-    public Disciplina(UUID id, String nome, int codigo, String periodo, int semestre, String area,
+    public void setSolved(boolean solved) {
+        this.solved = solved;
+    }
+
+    private boolean solved;
+
+    public Disciplina(UUID id, String nome, String codigo, String periodo, int semestre, String area,
                       String segunda,String terca, String quarta, String quinta, String sexta) {
         mId = id;
         mNome = nome;
@@ -56,11 +65,11 @@ public class Disciplina {
         mNome = nome;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return mCodigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         mCodigo = codigo;
     }
 

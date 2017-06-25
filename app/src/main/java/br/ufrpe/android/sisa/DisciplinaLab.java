@@ -22,7 +22,8 @@ public class DisciplinaLab {
         for (int i=1;i<66;i++){
             Disciplina d=new Disciplina();
             d.setNome("disciplina numero "+i);
-            d.setCodigo(i);
+            d.setSolved(true);
+            d.setCodigo(Integer.toString(i));
             mDisciplinas.add(d);
         }
     }
