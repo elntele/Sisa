@@ -7,6 +7,11 @@
     <string name="login_button">Entrar</string>
     <string name="cadastro_button">Cadastre-se</string>
     <string name="disciplina_titulo">Lista de disciplinas</string>
+    <string name="minha_grade_de_matricula">Minha Grade de Matrícula</string>
+    <string name="gerar_recomendações">Gerar Recomendações</string>
+    <string name="grade_curso">Grade do Curso</string>
+    <string name="meu_historico">Meu Histórico</string>
+    <string name="recomendacoes_anteriores">Recomendações Anteriores</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
