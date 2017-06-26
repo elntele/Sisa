@@ -27,6 +27,16 @@ public class LoginActivity extends AppCompatActivity{
         mEmail = (EditText) findViewById(R.id.email_edit_text);
         mSenha = (EditText) findViewById(R.id.senha_edit_text);
         mBtLogar = (Button) findViewById(R.id.login_button);
+        mBtLogar.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(LoginActivity.this, TelaInicialActivity.class);
+                startActivity(intent);
+            }
+        });
+
         mBtCadastrar = (Button) findViewById(R.id.cadastro_button);
         mBtCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
