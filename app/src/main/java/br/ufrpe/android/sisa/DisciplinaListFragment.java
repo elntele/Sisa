@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Created by jorge on 24/06/2017.
  */
 
-public class DisciplinaListFragment extends ListFragment {
+public class DisciplinaListFragment extends ListFragment{
     private ArrayList<Disciplina> mDisciplinas;
     private static final String TAG = "DisciplinaListFragment";
     @Override
@@ -27,6 +27,9 @@ public class DisciplinaListFragment extends ListFragment {
 
         DisciplinaAdapter adapter = new DisciplinaAdapter(mDisciplinas);
         setListAdapter(adapter);
+
+
+
     }
 
     @Override
@@ -63,6 +66,7 @@ public class DisciplinaListFragment extends ListFragment {
 
             return convertView;
         }
+
     }
 
 }
