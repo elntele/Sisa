@@ -29,11 +29,15 @@
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#009933"
+        android:textColor="#FFFFFF"
         android:text="@string/login_button"/>
 
     <Button
        android:id="@+id/cadastro_button"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:backgroundTint="#990000"
+       android:textColor="#FFFFFF"
        android:text="@string/cadastro_button"/>
 </LinearLayout>

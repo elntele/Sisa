@@ -104,7 +104,9 @@
                 android:id="@+id/proximo_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Próximo >"/>
+                android:backgroundTint="#009933"
+                android:textColor="#FFFFFF"
+                android:text="Próximo >>"/>
 
 
         </LinearLayout>
