@@ -25,7 +25,7 @@ public class DisciplinaLab {
         D.setCodigo("1");
         mDisciplinas.add(D);
         Disciplina Di=new Disciplina();
-        Di.setNome("matemática Discreta 1");
+        Di.setNome("Matemática Discreta 1");
         Di.setSolved(false);
         Di.setCodigo("2");
         mDisciplinas.add(Di);
@@ -35,12 +35,12 @@ public class DisciplinaLab {
         De.setCodigo("3");
         mDisciplinas.add(De);
         Disciplina Da=new Disciplina();
-        Da.setNome("Iniciação a computaçao");
+        Da.setNome("Iniciação a Ciência da Computaçao");
         Da.setSolved(false);
         Da.setCodigo("4");
         mDisciplinas.add(Da);
         Disciplina Do=new Disciplina();
-        Do.setNome("Algebra");
+        Do.setNome("Álgebra Linear");
         Da.setSolved(false);
         Do.setCodigo("5");
         mDisciplinas.add(Do);
@@ -155,7 +155,7 @@ public class DisciplinaLab {
         mDisciplinas.add(sa);
 
         Disciplina se=new Disciplina();
-        se.setNome("sistemas Distribuídos");
+        se.setNome("Sistemas Distribuídos");
         se.setSolved(false);
         se.setCodigo("25");
         mDisciplinas.add(se);
