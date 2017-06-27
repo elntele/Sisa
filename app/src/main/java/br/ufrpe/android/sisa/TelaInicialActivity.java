@@ -12,7 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 public class TelaInicialActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +36,20 @@ public class TelaInicialActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         }); */
+
+        TableLayout tl = new TableLayout(this);
+        TableLayout.LayoutParams lp = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        tl.setLayoutParams(lp);
+
+        TableRow tr = new TableRow(this);
+        tl.addView(tr);
+
+        TextView tv = new TextView(this);
+        tv.findViewById(R.id.grade_matricula_text_view);
+        tv.findViewById(R.id.gerar_recomendcoes_text_view);
+        tv.findViewById(R.id.grade_curso_text_view);
+        tv.findViewById(R.id.historico_text_view);
+        tv.findViewById(R.id.recomendacoes_anteriores_text_view);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
