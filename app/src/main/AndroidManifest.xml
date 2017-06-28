@@ -43,6 +43,8 @@
         </activity>
         <activity android:name=".GradeCursoActivity">
         </activity>
+        <activity android:name=".GradeImagemActivity">
+        </activity>
     </application>
 
 </manifest>
