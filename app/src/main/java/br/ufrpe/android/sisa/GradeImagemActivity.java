@@ -16,7 +16,8 @@ public class GradeImagemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_grade_imagem);
 
         mIv = (ImageView) findViewById(R.id.imagem_grade_view);
-        mButton = (Button) findViewById(R.id.button_grade_curso);
+
+    /*    mButton = (Button) findViewById(R.id.button_grade_curso);
         mButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -25,7 +26,7 @@ public class GradeImagemActivity extends AppCompatActivity {
                 Intent intent = new Intent(GradeImagemActivity.this, TelaInicialActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
 

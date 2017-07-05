@@ -19,19 +19,10 @@ public class Disciplina {
     private String mQuinta;
     private String mSexta;
     private String[] mDiaHora= new String[5];
-
-    public boolean isSolved() {
-        return solved;
-    }
-
-    public void setSolved(boolean solved) {
-        this.solved = solved;
-    }
-
-    private boolean solved;
+    private Boolean mCursada;
 
     public Disciplina(UUID id, String nome, String codigo, String periodo, int semestre, String area,
-                      String segunda,String terca, String quarta, String quinta, String sexta) {
+                      String segunda,String terca, String quarta, String quinta, String sexta, Boolean cursada) {
         mId = id;
         mNome = nome;
         mCodigo = codigo;
@@ -43,7 +34,13 @@ public class Disciplina {
         mQuarta = quarta;
         mQuinta = quinta;
         mSexta = sexta;
+        mCursada = cursada;
     }
+
+    public Disciplina() {
+
+    }
+
     @Override
     public String toString() {
         return mNome;
@@ -145,7 +142,15 @@ public class Disciplina {
         this.mDiaHora[4]=this.mSexta;
     }
 
-    public Disciplina() {
+    public boolean isCursada() {
 
+        return mCursada;
     }
+
+    public void setCursada(boolean cursada)
+    {
+        this.mCursada = cursada;
+    }
+
+
 }
