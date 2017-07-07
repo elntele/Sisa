@@ -45,6 +45,7 @@
         </activity>
         <activity android:name=".GradeImagemActivity">
         </activity>
+        <activity android:name=".DisciplinaActivity"/>
     </application>
 
 </manifest>

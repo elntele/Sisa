@@ -23,10 +23,11 @@ public class DisciplinaFragment extends Fragment {
         super.onCreate(savedInstanceState);
         mDisciplina = new Disciplina();
     }
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceBundle){
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
         View v = inflater.inflate(R.layout.fragment_disciplina, container, false);
+
 
         mCursadaCheckBox = (CheckBox)v.findViewById(R.id.is_cursada_disciplina);
         mCursadaCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

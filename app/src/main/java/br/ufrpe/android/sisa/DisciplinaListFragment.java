@@ -1,5 +1,6 @@
 package br.ufrpe.android.sisa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +54,7 @@ public class DisciplinaListFragment extends Fragment{
 
         private TextView mCodigoTextView;
         private TextView mNomeTextView;
+        private ImageView mDoneImageView;
         private Disciplina mDisciplina;
 
         public DisciplinaHolder(LayoutInflater inflater, ViewGroup parent){
@@ -60,6 +63,7 @@ public class DisciplinaListFragment extends Fragment{
 
             mCodigoTextView = (TextView) itemView.findViewById(R.id.codigo_disciplina_list);
             mNomeTextView = (TextView) itemView.findViewById(R.id.nome_disciplina_list);
+            mDoneImageView=(ImageView) itemView.findViewById(R.id.image_done);
 
         }
 
@@ -67,11 +71,13 @@ public class DisciplinaListFragment extends Fragment{
             mDisciplina = disciplina;
             mCodigoTextView.setText(mDisciplina.getCodigo());
             mNomeTextView.setText(mDisciplina.getNome());
+            mDoneImageView.setVisibility(disciplina.isCursada()? View.VISIBLE:View.GONE);
         }
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(getActivity(), mDisciplina.getNome() + " clicada!", Toast.LENGTH_SHORT).show();
+            Intent intent= DisciplinaActivity.newIntent(getActivity(),mDisciplina.getId());
+            startActivity(intent);
         }
     }
 
