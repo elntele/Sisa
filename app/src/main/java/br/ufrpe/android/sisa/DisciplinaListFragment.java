@@ -41,13 +41,23 @@ public class DisciplinaListFragment extends Fragment{
         return v;
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateUI();
+    }
+
     private void updateUI(){
 
         DisciplinaLab disciplinaLab = DisciplinaLab.getInstance(getActivity());
         List<Disciplina> disciplinas = disciplinaLab.getDisciplinas();
 
-        mAdapter = new DisciplinaAdapter(disciplinas);
-        mDisciplinaRecyclerView.setAdapter(mAdapter);
+        if (mAdapter == null) {
+            mAdapter = new DisciplinaAdapter(disciplinas);
+            mDisciplinaRecyclerView.setAdapter(mAdapter);
+        }else {
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
     private class DisciplinaHolder extends RecyclerView.ViewHolder implements View.OnClickListener{

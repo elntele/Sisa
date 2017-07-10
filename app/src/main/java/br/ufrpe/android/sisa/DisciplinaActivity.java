@@ -15,8 +15,8 @@ import java.util.UUID;
 
 public class DisciplinaActivity extends SingleFragmentActivity{
 
-    public static final  String EXTRA_DISCIPLINA_ID=
-            "com.bignerdranch.android.crimenalintent.crime_id";
+    private static final  String EXTRA_DISCIPLINA_ID=
+            "br.ufrpe.android.sisa.disciplina_id";
 
     public static Intent newIntent(Context packageContext, UUID disciplinaId){
         Intent intent = new Intent( packageContext,DisciplinaActivity.class);
@@ -28,6 +28,8 @@ public class DisciplinaActivity extends SingleFragmentActivity{
 
     @Override
     protected Fragment createFragment() {
-        return new DisciplinaFragment();
+     //   return new DisciplinaFragment();
+        UUID disciplinaId = (UUID) getIntent().getSerializableExtra(EXTRA_DISCIPLINA_ID);
+        return DisciplinaFragment.newInstance(disciplinaId);
     }
 }

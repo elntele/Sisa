@@ -38,7 +38,7 @@ public class Disciplina {
     }
 
     public Disciplina() {
-
+        mId = UUID.randomUUID();
     }
 
     @Override
