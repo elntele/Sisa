@@ -7,30 +7,35 @@
                 android:id="@+id/disciplina_fragment">
 
     <TextView
+        style="?android:listSeparatorTextViewStyle"
         android:id="@+id/codigo_disciplina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/codigo_disciplina_text_view"/>
 
     <TextView
+        style="?android:listSeparatorTextViewStyle"
         android:id="@+id/nome_disciplina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/nome_disciplina_text_view"/>
 
     <TextView
+        style="?android:listSeparatorTextViewStyle"
         android:id="@+id/periodo_disciplina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/periodo_disciplina_text_view"/>
 
     <TextView
+        style="?android:listSeparatorTextViewStyle"
         android:id="@+id/semestre_disciplina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/semestre_disciplina_text_view"/>
 
     <TextView
+        style="?android:listSeparatorTextViewStyle"
         android:id="@+id/area_disciplina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +46,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/is_cursada_disciplina_check_box"/>
-
-
 </LinearLayout>
