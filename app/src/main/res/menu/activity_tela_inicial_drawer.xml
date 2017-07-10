@@ -3,24 +3,24 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-           android:icon="@drawable/ic_menu_camera"
-            android:title="Gerar Recomendações"/>
+            android:id="@+id/nav_mensagens"
+            android:icon="@drawable/ic_sms_black_24dp"
+            android:title="Mensagens"/>
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery"/>
+            android:id="@+id/nav_alterar_dados"
+            android:icon="@drawable/ic_rate_review_black_24dp"
+            android:title="Alterar Dados"/>
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow"/>
+            android:id="@+id/nav_fale_conosco"
+            android:icon="@drawable/ic_feedback"
+            android:title="Fale Conosco"/>
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools"/>
+            android:id="@+id/nav_perguntas_frequentes"
+            android:icon="@drawable/ic_help_black_24dp"
+            android:title="Perguntas Frequentes"/>
     </group>
 
-    <item android:title="Communicate">
+<!--    <item android:title="Communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"
@@ -31,6 +31,6 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Send"/>
         </menu>
-    </item>
+    </item> -->
 
 </menu>
