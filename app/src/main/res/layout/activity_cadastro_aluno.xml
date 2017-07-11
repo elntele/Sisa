@@ -76,10 +76,11 @@
                 android:inputType="number"/>
 
             <TextView
+                style="?android:listSeparatorTextViewStyle"
                 android:id="@+id/area_preferencia_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:textSize="14dp"
                 android:text="Selecione a sua área de preferência"/>
 
             <CheckBox

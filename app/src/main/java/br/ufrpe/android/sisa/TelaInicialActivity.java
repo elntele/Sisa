@@ -62,6 +62,16 @@ public class TelaInicialActivity extends AppCompatActivity
             }
         });
 
+        tv = (TextView) findViewById(R.id.gerar_recomendcoes_text_view);
+        tv.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(TelaInicialActivity.this, PreGerarRecomendacoesActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
