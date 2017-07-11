@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -28,6 +29,7 @@ public class DisciplinaListFragment extends Fragment{
 
     private RecyclerView mDisciplinaRecyclerView;
     private DisciplinaAdapter mAdapter;
+    private Button mCadastrarButton;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 

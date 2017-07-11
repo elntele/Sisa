@@ -1,6 +1,7 @@
 package br.ufrpe.android.sisa;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.UUID;
 
@@ -22,6 +24,7 @@ public class DisciplinaFragment extends Fragment {
     private TextView mNomeTextView;
     private TextView mCodigoTextView;
     private TextView mAreaTextView;
+    private FloatingActionButton mFloatingActionButton;
     private static final String ARG_DISCIPLINA_ID = "disciplina_id";
 
     public static DisciplinaFragment newInstance (UUID disciplinaId){
@@ -42,7 +45,7 @@ public class DisciplinaFragment extends Fragment {
         mDisciplina = DisciplinaLab.getInstance(getActivity()).getDisciplina(disciplinaId);
     }
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState){
 
         View v = inflater.inflate(R.layout.fragment_disciplina, container, false);
 
@@ -65,6 +68,9 @@ public class DisciplinaFragment extends Fragment {
                 mDisciplina.setCursada(isChecked);
             }
         });
+
+        mFloatingActionButton = (FloatingActionButton) v.findViewById(R.id.cadastro_fab);
+       
         return v;
     }
 }

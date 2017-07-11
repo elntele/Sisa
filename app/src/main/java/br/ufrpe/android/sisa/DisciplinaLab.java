@@ -333,6 +333,8 @@ public class DisciplinaLab {
         d34.setArea("FC");
         mDisciplinas.add(d34);
 
+
+
     /*     for (int i=1;i<66;i++){
             Disciplina d=new Disciplina();
             d.setNome("disciplina nome"+i);
