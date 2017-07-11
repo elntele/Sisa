@@ -22,20 +22,6 @@
 
     <TextView
         style="?android:listSeparatorTextViewStyle"
-        android:id="@+id/periodo_disciplina"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/periodo_disciplina_text_view"/>
-
-    <TextView
-        style="?android:listSeparatorTextViewStyle"
-        android:id="@+id/semestre_disciplina"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/semestre_disciplina_text_view"/>
-
-    <TextView
-        style="?android:listSeparatorTextViewStyle"
         android:id="@+id/area_disciplina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

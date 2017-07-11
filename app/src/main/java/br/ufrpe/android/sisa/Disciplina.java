@@ -11,7 +11,7 @@ public class Disciplina {
     private String mNome;
     private String mCodigo;
     private String mPeriodo;
-    private int mSemestre;
+    private String mSemestre;
     private String mArea;
     private String mSegunda;
     private String mTerca;
@@ -21,7 +21,7 @@ public class Disciplina {
     private String[] mDiaHora= new String[5];
     private Boolean mCursada;
 
-    public Disciplina(UUID id, String nome, String codigo, String periodo, int semestre, String area,
+    public Disciplina(UUID id, String nome, String codigo, String periodo, String semestre, String area,
                       String segunda,String terca, String quarta, String quinta, String sexta, Boolean cursada) {
         mId = id;
         mNome = nome;
@@ -78,11 +78,11 @@ public class Disciplina {
         mPeriodo = periodo;
     }
 
-    public int getSemestre() {
+    public String getSemestre() {
         return mSemestre;
     }
 
-    public void setSemestre(int semestre) {
+    public void setSemestre(String semestre) {
         mSemestre = semestre;
     }
 

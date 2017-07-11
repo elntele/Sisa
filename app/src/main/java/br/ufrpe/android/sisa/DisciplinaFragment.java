@@ -21,8 +21,6 @@ public class DisciplinaFragment extends Fragment {
     private CheckBox mCursadaCheckBox;
     private TextView mNomeTextView;
     private TextView mCodigoTextView;
-    private TextView mPeriodoTextView;
-    private TextView mSemestreTextView;
     private TextView mAreaTextView;
     private static final String ARG_DISCIPLINA_ID = "disciplina_id";
 
@@ -40,9 +38,6 @@ public class DisciplinaFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-       // mDisciplina = new Disciplina();
-
-      //  UUID disciplinaId = (UUID) getActivity().getIntent().getSerializableExtra(DisciplinaActivity.EXTRA_DISCIPLINA_ID);
         UUID disciplinaId = (UUID) getArguments().getSerializable(ARG_DISCIPLINA_ID);
         mDisciplina = DisciplinaLab.getInstance(getActivity()).getDisciplina(disciplinaId);
     }
@@ -57,14 +52,8 @@ public class DisciplinaFragment extends Fragment {
         mCodigoTextView = (TextView) v.findViewById(R.id.codigo_disciplina);
         mCodigoTextView.setText(mDisciplina.getCodigo());
 
-      /*  mPeriodoTextView = (TextView) v.findViewById(R.id.periodo_disciplina);
-        mPeriodoTextView.setText(mDisciplina.getPeriodo());
-
-        mSemestreTextView = (TextView) v.findViewById(R.id.semestre_disciplina);
-        mSemestreTextView.setText(mDisciplina.getSemestre());
-
         mAreaTextView = (TextView) v.findViewById(R.id.area_disciplina);
-        mAreaTextView.setText(mDisciplina.getArea()); */
+        mAreaTextView.setText(mDisciplina.getArea());
 
         mCursadaCheckBox = (CheckBox)v.findViewById(R.id.is_cursada_disciplina);
         mCursadaCheckBox.setChecked(mDisciplina.isCursada());
