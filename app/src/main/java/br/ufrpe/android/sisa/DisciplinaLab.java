@@ -333,7 +333,14 @@ public class DisciplinaLab {
         d34.setArea("FC");
         mDisciplinas.add(d34);
 
-
+        Disciplina d35 = new Disciplina();
+        d35.setNome("");
+        d35.setCursada(false);
+        d35.setPeriodo("");
+        d35.setSemestre("");
+        d35.setArea("");
+        d35.setCodigo("");
+        mDisciplinas.add(d35);
 
     /*     for (int i=1;i<66;i++){
             Disciplina d=new Disciplina();
