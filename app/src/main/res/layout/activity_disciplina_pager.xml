@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.supportv4.view.ViewPager
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/disciplina_view_pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</android.supportv4.view.ViewPager>
