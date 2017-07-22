@@ -21,8 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".CadastroAlunoActivity"/>
-        <activity android:name=".DisciplinaListActivity"/> <!-- tem que voltar o / pra cá -->
+        <activity android:name=".CadastroAlunoActivity"></activity>
+        <activity android:name=".DisciplinaListActivity"></activity> <!--tem que voltar o / pra cá -->
+        <activity android:name=".DisciplinaPagerActivity"></activity> <!-- incluído a partir da aula 11 pagerview -->
 
 
         <!--
