@@ -89,7 +89,7 @@ public class DisciplinaListFragment extends Fragment{
         @Override
         public void onClick(View v) {
          //   Intent intent= DisciplinaActivity.newIntent(getActivity(),mDisciplina.getId());
-            Intent intent = DisciplinaPagerActivity.newIntent(getActivity(), mDisciplina.getId());
+            Intent intent = DisciplinaPagerActivity.newIntent(getActivity(), mDisciplina.getId()); //Incluído na aula 11 PagerView
             startActivity(intent);
         }
     }

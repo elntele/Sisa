@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -25,7 +26,8 @@ public class DisciplinaFragment extends Fragment {
     private TextView mNomeTextView;
     private TextView mCodigoTextView;
     private TextView mAreaTextView;
-    private FloatingActionButton mFloatingActionButton;
+  //  private FloatingActionButton mFloatingActionButton;
+    private Button mSalvarButton;
     private static final String ARG_DISCIPLINA_ID = "disciplina_id";
 
     public static DisciplinaFragment newInstance (UUID disciplinaId){
@@ -70,8 +72,8 @@ public class DisciplinaFragment extends Fragment {
             }
         });
 
-        mFloatingActionButton = (FloatingActionButton) v.findViewById(R.id.cadastro_fab);
-
+     //   mFloatingActionButton = (FloatingActionButton) v.findViewById(R.id.cadastro_fab);
+          mSalvarButton = (Button) v.findViewById(R.id.salvar_button);
 
         return v;
     }
