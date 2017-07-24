@@ -81,25 +81,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
-                android:text="Selecione a sua área de preferência"/>
+                android:text="Selecione a sua área de preferência"
+                android:textAlignment="center"/>
 
-            <CheckBox
-                android:id="@+id/box_ensiso_check_box"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ensiso"/>
+                android:orientation="horizontal"
+                android:gravity="center">
 
-            <CheckBox
-                android:id="@+id/box_arq_check_box"
+                <CheckBox
+                    android:id="@+id/box_ensiso_check_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ensiso"/>
+
+                <CheckBox
+                    android:id="@+id/box_arq_check_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ARQ"/>
+
+                <CheckBox
+                    android:id="@+id/box_fc_check_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FC"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/tela_foto_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ARQ"/>
-
-            <CheckBox
-                android:id="@+id/box_fc_check_box"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="FC"/>
+                android:backgroundTint="#990000"
+                android:textColor="#FFFFFF"
+                android:text="Tirar Foto"/>
 
             <Button
                 android:id="@+id/proximo_button"
@@ -107,12 +123,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#009933"
                 android:textColor="#FFFFFF"
-                android:text="Próximo >>"/>
-
-
+                android:text="Próximo"/>
         </LinearLayout>
     </ScrollView>
-
-
-
 </LinearLayout>

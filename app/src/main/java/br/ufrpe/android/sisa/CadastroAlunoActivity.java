@@ -32,6 +32,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
     private EditText mHorasEstudoExtraClasse;
     private TextView mEscolhaAreaDePreferencia;
     private Button mBtProximo;
+    private Button mBtFoto;
     public CadastroAlunoActivity() {
         // Required empty public constructor
     }
@@ -52,9 +53,17 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         mQtdPeriodosTrancados = (EditText) findViewById(R.id.periodo_tracando_edit_text);
         mHorasEstudoExtraClasse = (EditText) findViewById(R.id.qts_h_semanal_edit_text);
         mEscolhaAreaDePreferencia=(TextView) findViewById(R.id.area_preferencia_text_view);
+        mBtFoto = (Button) findViewById(R.id.tela_foto_button);
+        mBtFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // Aqui devemos implementar a chamada para a tela de tirar foto!
+            }
+        });
+
+
         mBtProximo = (Button) findViewById(R.id.proximo_button);
-
-
         mBtProximo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
