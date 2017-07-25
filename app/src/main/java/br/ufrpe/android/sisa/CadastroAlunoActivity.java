@@ -59,6 +59,8 @@ public class CadastroAlunoActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // Aqui devemos implementar a chamada para a tela de tirar foto!
+                Intent intent = new Intent(CadastroAlunoActivity.this, CapturaFotoActivity.class);
+                startActivity(intent);
             }
         });
 
