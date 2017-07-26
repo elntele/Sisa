@@ -46,6 +46,8 @@ public class CapturaFotoActivity extends AppCompatActivity {
     static final int REQUEST_TAKE_PHOTO = 1;
     static String mCurrentPhotoPath;
 
+    /*Método responsável por verificar se as permissões aos recursos do Android foram habilitados no arquivo
+    AndroidManifest.xml*/
     private void getPermissions() {
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
@@ -59,6 +61,7 @@ public class CapturaFotoActivity extends AppCompatActivity {
             dispatchTakePictureIntent();
     }
 
+    /*Verifica se o usuário permitiu acesso aos recursos de câmera antes da câmera ser acionada*/
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults){
 
@@ -74,6 +77,7 @@ public class CapturaFotoActivity extends AppCompatActivity {
         }
     }
 
+    /*Método responsável por invocar a câmera do dispositivo e salvar a foto no cartão SD*/
     private void dispatchTakePictureIntent() {
 
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -96,6 +100,7 @@ public class CapturaFotoActivity extends AppCompatActivity {
         }
     }
 
+    /*Método chamado automaticamente, responsável por recuperar a foto tirada e exibi-lá no ImageView */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
