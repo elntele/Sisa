@@ -1,10 +1,13 @@
 package br.ufrpe.android.sisa;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
+import br.ufrpe.android.sisa.database.DisciplinaBaseHelper;
 
 /**
  * Created by jorge on 24/06/2017.
@@ -15,6 +18,8 @@ public class DisciplinaLab {
 
     private static DisciplinaLab sDisciplinaLab;
     private List<Disciplina> mDisciplinas;
+    private Context mContext;// add para o banco
+    private SQLiteDatabase mDatabase; // add para o banco
 
     public static DisciplinaLab getInstance(Context context) {
         if (sDisciplinaLab == null) {
@@ -24,8 +29,10 @@ public class DisciplinaLab {
     }
 
     private DisciplinaLab(Context appContext) {
-
-        mDisciplinas=new ArrayList<Disciplina>();
+        mContext = appContext.getApplicationContext(); // add para o banco
+        mDatabase = new DisciplinaBaseHelper(mContext)// add para o banco
+                .getWritableDatabase();
+      mDisciplinas=new ArrayList<Disciplina>();
 
         Disciplina d1=new Disciplina();
         d1.setNome("Cálculo 1");
@@ -342,13 +349,7 @@ public class DisciplinaLab {
         d35.setCodigo("");
         mDisciplinas.add(d35);
 
-    /*     for (int i=1;i<66;i++){
-            Disciplina d=new Disciplina();
-            d.setNome("disciplina nome"+i);
-            d.setCursada(false);
-            d.setCodigo(Integer.toString(i));
-            mDisciplinas.add(d);
-        }*/
+
     }
 
     public List<Disciplina> getDisciplinas(){
