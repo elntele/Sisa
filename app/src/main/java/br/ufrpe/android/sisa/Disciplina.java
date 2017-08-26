@@ -38,8 +38,15 @@ public class Disciplina {
     }
 
     public Disciplina() {
-        mId = UUID.randomUUID();
+        this(UUID.randomUUID());
+       }
+
+
+    public Disciplina(UUID id) {
+        mId = id;
+
     }
+
 
     @Override
     public String toString() {

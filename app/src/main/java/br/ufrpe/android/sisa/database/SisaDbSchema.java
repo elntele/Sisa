@@ -11,7 +11,7 @@ public class SisaDbSchema {
         public static final class Cols {
             public static final String NOME ="nome";
             public static final String ID ="id";
-            public static final String CODIGO="qtdhoras";
+            public static final String CODIGO="codigo";
             public static final String PERIODO ="periodo";
             public static final String SEMESTRE = "qtd";
             public static final String CURSADA="cursada";

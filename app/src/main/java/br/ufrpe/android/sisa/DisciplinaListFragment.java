@@ -58,6 +58,7 @@ public class DisciplinaListFragment extends Fragment{
             mAdapter = new DisciplinaAdapter(disciplinas);
             mDisciplinaRecyclerView.setAdapter(mAdapter);
         }else {
+            mAdapter.setdisciplinas(disciplinas);
             mAdapter.notifyDataSetChanged();
         }
     }
@@ -120,5 +121,11 @@ public class DisciplinaListFragment extends Fragment{
         public int getItemCount() {
             return mDisciplinas.size();
         }
+
+        public void setdisciplinas(List<Disciplina> disciplinas) {
+            mDisciplinas=disciplinas;
+        }
     }
+
+
 }

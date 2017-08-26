@@ -21,17 +21,18 @@ public class DisciplinaBaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+ DisciplinaTable.NAME+"("+
-                "_id integer primary key autoincrement,"+
-                DisciplinaTable.Cols.ID+ ","+
-                DisciplinaTable.Cols.AREA+","+
-                DisciplinaTable.Cols.CODIGO+","+
-                DisciplinaTable.Cols.PERIODO+","+
-                DisciplinaTable.Cols.SEMESTRE+","+
-                DisciplinaTable.Cols.CURSADA+")"
+        db.execSQL("create table "+ DisciplinaTable.NAME + "(" +
+                "_id integer primary key autoincrement, " +
+                DisciplinaTable.Cols.ID + ", " +
+                DisciplinaTable.Cols.AREA + ", " +
+                DisciplinaTable.Cols.CODIGO + ", " +
+                DisciplinaTable.Cols.PERIODO + ", " +
+                DisciplinaTable.Cols.SEMESTRE + ", " +
+                DisciplinaTable.Cols.CURSADA +", " +
+                DisciplinaTable.Cols.NOME+
+                ")"
 
         );
-
 
 
 

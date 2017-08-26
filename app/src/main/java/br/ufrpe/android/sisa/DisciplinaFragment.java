@@ -47,6 +47,14 @@ public class DisciplinaFragment extends Fragment {
         UUID disciplinaId = (UUID) getArguments().getSerializable(ARG_DISCIPLINA_ID);
         mDisciplina = DisciplinaLab.getInstance(getActivity()).getDisciplina(disciplinaId);
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        DisciplinaLab.getInstance(getActivity())
+                .updateDisciplina(mDisciplina);
+    }
+
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState){
 
