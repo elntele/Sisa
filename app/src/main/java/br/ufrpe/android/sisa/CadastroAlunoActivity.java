@@ -70,7 +70,9 @@ public class CadastroAlunoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Aqui deve conter o código que quando acionar o botão cadastrar ele deverá ir para tela de cadastro.
+                Aluno aluno= new Aluno();
                 Intent intent = new Intent(CadastroAlunoActivity.this, DisciplinaListActivity.class);
+                intent.putExtra("aluno",aluno);
                 startActivity(intent);
             }
         });

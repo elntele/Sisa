@@ -15,12 +15,19 @@ import java.util.UUID;
 
 public class DisciplinaActivity extends SingleFragmentActivity{
 
+    private Aluno mAluno;
     private static final  String EXTRA_DISCIPLINA_ID=
             "br.ufrpe.android.sisa.disciplina_id";
+
+    public void setAluno(Aluno aluno) {
+        mAluno = aluno;
+    }
 
     public static Intent newIntent(Context packageContext, UUID disciplinaId){
         Intent intent = new Intent( packageContext,DisciplinaActivity.class);
         intent.putExtra(EXTRA_DISCIPLINA_ID,disciplinaId);
+
+
 
         return intent;
     }
@@ -28,8 +35,10 @@ public class DisciplinaActivity extends SingleFragmentActivity{
 
     @Override
     protected Fragment createFragment() {
-     //   return new DisciplinaFragment();
+        mAluno = (Aluno) getIntent().getSerializableExtra("aluno");
         UUID disciplinaId = (UUID) getIntent().getSerializableExtra(EXTRA_DISCIPLINA_ID);
-        return DisciplinaFragment.newInstance(disciplinaId);
+        DisciplinaFragment disciplinaFragment = DisciplinaFragment.newInstance(disciplinaId);
+        disciplinaFragment.setAluno(mAluno);
+        return disciplinaFragment;
     }
 }

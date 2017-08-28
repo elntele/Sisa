@@ -19,4 +19,21 @@ public class SisaDbSchema {
 
         }
     }
+
+    public static final class AlunoTable {
+        public static final String NAME = "aluno";
+        public static final class Cols {
+            public static final String ID ="id";
+            public static final String NOME ="nome";
+            public static final String EMAIL="email";
+            public static final String SENHA ="senha";
+            public static final String CPF ="cpf";
+            public static final String CURSADAS= "cursadas";
+            public static final String QTDDEPERIODOSTRANCADOS = "qtddeperiodostrancados";
+            public static final String ANODEINGRESSO = "anodeingresso";
+            public static final String PERIODODEINGRESSO="periododeingresso";
+            public static final String AREA = "area";
+
+        }
+    }
 }

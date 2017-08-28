@@ -8,9 +8,16 @@ import android.support.v4.app.Fragment;
  */
 
 public class DisciplinaListActivity extends SingleFragmentActivity {
+   private Aluno aluno; // adicionado
 
    @Override
     protected Fragment createFragment() {
-        return new  DisciplinaListFragment();
+       this.aluno = (Aluno) getIntent().getSerializableExtra("aluno");
+       DisciplinaListFragment fragment = new DisciplinaListFragment();
+       fragment.setAluno(this.aluno);
+       return fragment;
+
     }
+
+
 }

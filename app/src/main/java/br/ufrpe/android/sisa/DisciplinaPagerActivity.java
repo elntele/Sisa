@@ -21,6 +21,7 @@ public class DisciplinaPagerActivity extends AppCompatActivity {
     private static final String EXTRA_DISCIPLINA_ID = "br.ufrpe.android.sisa.disciplina_id";
     private ViewPager mViewPager;
     private List<Disciplina> mDisciplinas;
+    private Aluno mAluno; // adicionado para recuperar aluno
 
     public static Intent newIntent(Context packageContext, UUID disciplinaId){
 
@@ -34,6 +35,8 @@ public class DisciplinaPagerActivity extends AppCompatActivity {
         super.onCreate(savedInstaceState);
         setContentView(R.layout.activity_disciplina_pager);
 
+        this.mAluno = (Aluno) getIntent().getSerializableExtra("aluno");// adicionado para recuperar aluno
+
         UUID disciplinaId = (UUID) getIntent().getSerializableExtra(EXTRA_DISCIPLINA_ID);
 
         mViewPager = (ViewPager) findViewById(R.id.disciplina_view_pager);
@@ -44,7 +47,9 @@ public class DisciplinaPagerActivity extends AppCompatActivity {
             @Override
             public Fragment getItem(int position) {
                 Disciplina disciplina = mDisciplinas.get(position);
-                return DisciplinaFragment.newInstance(disciplina.getId());
+                DisciplinaFragment fra=DisciplinaFragment.newInstance(disciplina.getId());   // add para o aluno
+                fra.setAluno(mAluno);
+                return fra;// adicionado o aluno
             }
 
             @Override

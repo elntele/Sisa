@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
+import br.ufrpe.android.sisa.database.AlunoBaseHelper;
 import br.ufrpe.android.sisa.database.DisciplinaBaseHelper;
 import br.ufrpe.android.sisa.database.DisciplinaCursorWrapper;
 import br.ufrpe.android.sisa.database.SisaDbSchema;
@@ -54,6 +55,10 @@ public class DisciplinaLab {
         mContext = appContext.getApplicationContext(); // add para o banco
         mDatabase = new DisciplinaBaseHelper(mContext)// add para o banco
                 .getWritableDatabase();
+        //mDatabase = new AlunoBaseHelper(mContext)// adicionado para a tabela aluno
+        //     .getWritableDatabase();
+
+
       //mDisciplinas=new ArrayList<Disciplina>(); remuv causa do bd
       Disciplina d1=new Disciplina();
       d1.setNome("Cálculo 1");

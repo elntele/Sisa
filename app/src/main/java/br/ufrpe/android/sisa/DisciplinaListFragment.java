@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -29,7 +30,12 @@ public class DisciplinaListFragment extends Fragment{
 
     private RecyclerView mDisciplinaRecyclerView;
     private DisciplinaAdapter mAdapter;
-    private Button mCadastrarButton;
+    private Aluno mAluno;
+    private Button mBotaoSalvar;
+
+    public void setAluno(Aluno aluno) {
+        mAluno = aluno;
+    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
@@ -63,7 +69,7 @@ public class DisciplinaListFragment extends Fragment{
         }
     }
 
-    private class DisciplinaHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    private class DisciplinaHolder extends RecyclerView.ViewHolder implements OnClickListener{
 
         private TextView mCodigoTextView;
         private TextView mNomeTextView;
@@ -79,20 +85,31 @@ public class DisciplinaListFragment extends Fragment{
             mDoneImageView=(ImageView) itemView.findViewById(R.id.image_done);
 
         }
-
+        // metodo que confere se a disciplina esta tickada.
         public void bind (Disciplina disciplina){
             mDisciplina = disciplina;
+            ArrayList D =new ArrayList();
             mCodigoTextView.setText(mDisciplina.getCodigo());
             mNomeTextView.setText(mDisciplina.getNome());
             mDoneImageView.setVisibility(disciplina.isCursada()? View.VISIBLE:View.GONE);
+            if (disciplina.isCursada()){
+                D= mAluno.getCursadas();
+                D.add(disciplina);
+                mAluno.setCursadas(D);
+            }
         }
 
         @Override
         public void onClick(View v) {
-         //   Intent intent= DisciplinaActivity.newIntent(getActivity(),mDisciplina.getId());
             Intent intent = DisciplinaPagerActivity.newIntent(getActivity(), mDisciplina.getId()); //Incluído na aula 11 PagerView
+            intent.putExtra("aluno",mAluno);
             startActivity(intent);
         }
+
+
+
+
+
     }
 
     private class DisciplinaAdapter extends RecyclerView.Adapter<DisciplinaHolder>{
@@ -124,6 +141,10 @@ public class DisciplinaListFragment extends Fragment{
 
         public void setdisciplinas(List<Disciplina> disciplinas) {
             mDisciplinas=disciplinas;
+        }
+        // adicionado para pegar as disciplinas do adapter
+        public List<Disciplina> getDisciplinas(){
+            return mDisciplinas;
         }
     }
 

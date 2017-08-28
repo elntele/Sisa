@@ -26,17 +26,23 @@ public class DisciplinaFragment extends Fragment {
     private TextView mNomeTextView;
     private TextView mCodigoTextView;
     private TextView mAreaTextView;
+    private Aluno mAluno;
+    private Button mBotao;
   //  private FloatingActionButton mFloatingActionButton;
     private Button mSalvarButton;
     private static final String ARG_DISCIPLINA_ID = "disciplina_id";
 
-    public static DisciplinaFragment newInstance (UUID disciplinaId){
+    public static DisciplinaFragment newInstance (UUID disciplinaId){// adicionado o aluno
 
         Bundle args = new Bundle();
         args.putSerializable(ARG_DISCIPLINA_ID,disciplinaId);
         DisciplinaFragment fragment = new DisciplinaFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    public void setAluno(Aluno aluno){
+        mAluno=aluno;
     }
 
     @Override
@@ -80,8 +86,21 @@ public class DisciplinaFragment extends Fragment {
             }
         });
 
+
+
+        mBotao = (Button) v.findViewById(R.id.salvar_button);
+        mBotao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Exemplo Toast", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+
      //   mFloatingActionButton = (FloatingActionButton) v.findViewById(R.id.cadastro_fab);
-          mSalvarButton = (Button) v.findViewById(R.id.salvar_button);
+         // mSalvarButton = (Button) v.findViewById(R.id.salvar_button);
 
         return v;
     }
