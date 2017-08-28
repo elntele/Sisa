@@ -4,7 +4,9 @@ package br.ufrpe.android.sisa;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -44,7 +47,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
 
         mNome = (EditText) findViewById(R.id.nome_edit_text);
         mCPF = (EditText) findViewById(R.id.cpf_edit_text);
-        mSenha = (EditText) findViewById(R.id.cpf_edit_text);
+        mSenha = (EditText) findViewById(R.id.senha_edit_text);
         mEmail = (EditText) findViewById(R.id.email_edit_text);
         mAnoPeriodoIngresso = (EditText) findViewById(R.id.ano_periodo_edit_text);
         mAreaPreferenciaFC = (CheckBox) findViewById(R.id.box_fc_check_box);
@@ -70,10 +73,49 @@ public class CadastroAlunoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Aqui deve conter o código que quando acionar o botão cadastrar ele deverá ir para tela de cadastro.
-                Aluno aluno= new Aluno();
-                Intent intent = new Intent(CadastroAlunoActivity.this, DisciplinaListActivity.class);
-                intent.putExtra("aluno",aluno);
-                startActivity(intent);
+                if (mNome.equals("") || mCPF.equals("") ||
+                        (!mAreaPreferenciaARQ.isChecked() && !mAreaPreferenciaEnsiso.isChecked() && !mAreaPreferenciaFC.isChecked())||
+                        mAnoPeriodoIngresso.equals("")||mSenha.equals("")||mEmail.equals("")||mQtdPeriodosTrancados.equals("")||
+                        mHorasEstudoExtraClasse.equals("")
+                        ){
+                    Toast.makeText(getApplicationContext(),"Preencha todos os campos", Toast.LENGTH_SHORT).show();
+                }else{
+                    Aluno aluno= new Aluno();
+                    aluno.setNome(mNome.getText().toString());
+                    try {
+                        aluno.setCpf(Integer.parseInt(mCPF.getText().toString()) );
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    try{}catch (Exception e){e.printStackTrace();}
+
+                    try{
+                        aluno.setQtdDePeriodosTrancado(Integer.parseInt(mQtdPeriodosTrancados.getText().toString()));
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    String Texto =mAnoPeriodoIngresso.getText().toString();
+                    String TextoSeparado [] = Texto.split(".");
+                    try{
+                        aluno.setAndoDeIngresso(Integer.parseInt(TextoSeparado[0]) );
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    try{
+                        aluno.setPeriodoDeIngresso(Integer.parseInt(TextoSeparado[1]));
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    aluno.setSenha(mSenha.getText().toString());
+                    aluno.setEmail(mEmail.getText().toString());
+                    if (mAreaPreferenciaARQ.isChecked()) aluno.setArea("ARQ");
+                    if (mAreaPreferenciaFC.isChecked()) aluno.setArea("FC");
+                    if (mAreaPreferenciaEnsiso.isChecked()) aluno.setArea("ENSISO");
+                    Intent intent = new Intent(CadastroAlunoActivity.this, DisciplinaListActivity.class);
+                    intent.putExtra("aluno",aluno);
+                    startActivity(intent);
+                }
+
             }
         });
 

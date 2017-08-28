@@ -18,6 +18,7 @@ public class Aluno implements Serializable {
     private int qtdDePeriodosTrancado;
     private int mAndoDeIngresso;
     private int mPeriodoDeIngresso;
+    private int mHorasDeEstudoExtraClasse;
     private String mArea;
 
     public Aluno() {
