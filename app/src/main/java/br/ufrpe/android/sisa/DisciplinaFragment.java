@@ -1,6 +1,8 @@
 package br.ufrpe.android.sisa;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -13,6 +15,8 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -28,7 +32,11 @@ public class DisciplinaFragment extends Fragment {
     private TextView mAreaTextView;
     private Aluno mAluno;
     private Button mBotao;
-  //  private FloatingActionButton mFloatingActionButton;
+    private Context mContext;// add para o banco
+    private SQLiteDatabase mDatabase; // add para o banco
+
+
+    //  private FloatingActionButton mFloatingActionButton;
     private Button mSalvarButton;
     private static final String ARG_DISCIPLINA_ID = "disciplina_id";
 
@@ -81,8 +89,14 @@ public class DisciplinaFragment extends Fragment {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
+                ArrayList<Disciplina> Dis;
                 mDisciplina.setCursada(isChecked);
+                if (mDisciplina.isCursada()){
+                    Dis= mAluno.getCursadas();
+                    Dis.add(mDisciplina);
+                    mAluno.setCursadas(Dis);
+                }
+
             }
         });
 
@@ -94,7 +108,8 @@ public class DisciplinaFragment extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Exemplo Toast", Toast.LENGTH_SHORT).show();
 
-
+            Intent intent = new Intent(getActivity(),TelaInicialActivity.class);
+                startActivity(intent);
             }
         });
 

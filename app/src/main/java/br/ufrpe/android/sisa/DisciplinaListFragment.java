@@ -88,15 +88,10 @@ public class DisciplinaListFragment extends Fragment{
         // metodo que confere se a disciplina esta tickada.
         public void bind (Disciplina disciplina){
             mDisciplina = disciplina;
-            ArrayList D =new ArrayList();
             mCodigoTextView.setText(mDisciplina.getCodigo());
             mNomeTextView.setText(mDisciplina.getNome());
             mDoneImageView.setVisibility(disciplina.isCursada()? View.VISIBLE:View.GONE);
-            if (disciplina.isCursada()){
-                D= mAluno.getCursadas();
-                D.add(disciplina);
-                mAluno.setCursadas(D);
-            }
+
         }
 
         @Override
