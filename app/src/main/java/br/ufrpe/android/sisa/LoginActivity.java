@@ -6,12 +6,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * Created by jorge on 15/06/2017.
  */
 
 public class LoginActivity extends AppCompatActivity{
+
+    private ConsultaAoBanco mconsuta;
+    private Aluno mAluno;
+    private ArrayList<Aluno> mListDeAlunos=new ArrayList<>();
+
+
 
 
     private EditText mEmail;
@@ -32,8 +41,24 @@ public class LoginActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(LoginActivity.this, TelaInicialActivity.class);
-                startActivity(intent);
+                mconsuta=  ConsultaAoBanco.getInstance(getApplicationContext());
+                mListDeAlunos= (ArrayList<Aluno>) mconsuta.getAlunos();
+                for (Aluno A: mListDeAlunos){
+                    if (A.getEmail().equals(mEmail.getText().toString())){
+                        if (A.getSenha().equals(mSenha.getText().toString())){
+                            Intent intent = new Intent(LoginActivity.this, TelaInicialActivity.class);
+                            intent.putExtra("id",A.getId());
+                            startActivity(intent);
+                        }
+                    } else {
+                        Toast.makeText(getApplication(), "usuário e senha inválido, insira um usuário válido ou cadastre-se ",
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+                Toast.makeText(getApplication(), "usuário e senha inválido, insira um usuário válido ou cadastre-se ",
+                        Toast.LENGTH_SHORT).show();
+
             }
         });
 

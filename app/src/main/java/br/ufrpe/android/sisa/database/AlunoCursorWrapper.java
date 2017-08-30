@@ -1,13 +1,17 @@
 package br.ufrpe.android.sisa.database;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.CursorWrapper;
+import android.preference.PreferenceManager;
 import android.renderscript.Type;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.bind.ArrayTypeAdapter;
 import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +20,7 @@ import java.util.UUID;
 import br.ufrpe.android.sisa.Aluno;
 import br.ufrpe.android.sisa.Disciplina;
 
+import static android.content.Context.MODE_PRIVATE;
 import static junit.runner.BaseTestRunner.getPreference;
 
 /**
@@ -42,15 +47,23 @@ public class AlunoCursorWrapper  extends CursorWrapper {
         String areastring = getString(getColumnIndex(SisaDbSchema.AlunoTable.Cols.AREA));
         String cursadasstring =  getString(getColumnIndex(SisaDbSchema.AlunoTable.Cols.CURSADAS));
 
-        //adaptado, qq coisa voltar a pagina:
+        /*//adaptado, qq coisa voltar a pagina:
         //https://pt.stackoverflow.com/questions/33677/como-salvar-lista-de-objetos-em-android
-
-        SharedPreferences  mPrefs = null; // esse null foi adaptado
+       //SharedPreferences  mPrefs = getPreferences(Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        //gson.toJson(cursadasstring);
+       //String json = gson.getString(cursadasstring, "");
+        //JSONObject
+        SharedPreferences  mPrefs = getPreferences(MODE_PRIVATE);
         Gson gson = new Gson();
         String json = mPrefs.getString(cursadasstring, "");
-        Type type = (Type) new TypeToken<ArrayList<Disciplina>>(){}.getType();
-        ArrayList<Disciplina> listaCursadas = gson.fromJson(json, (java.lang.reflect.Type) type);
+        Type type = (Type) new TypeToken<List<Disciplina>>(){}.getType();
+        List<Disciplina> obj = gson.fromJson(json, (java.lang.reflect.Type) type);
 
+
+        Type type = (Type) new TypeToken<ArrayList<Disciplina>>(){}.getType();
+        ArrayList<Disciplina> listaCursadas = gson.fromJson(gson.toJson(), (java.lang.reflect.Type) type);
+        */
         String anodeingressostring = getString(getColumnIndex(SisaDbSchema.AlunoTable.Cols.ANODEINGRESSO));
         String periododeingressostring = getString(getColumnIndex(SisaDbSchema.AlunoTable.Cols.PERIODODEINGRESSO));
         String qtddeperiodostrancadosstring = getString(getColumnIndex(SisaDbSchema.AlunoTable.Cols.QTDDEPERIODOSTRANCADOS));
@@ -59,7 +72,7 @@ public class AlunoCursorWrapper  extends CursorWrapper {
         aluno.setEmail(emailstring);
         aluno.setSenha(senhastring);
         aluno.setCpf(Integer.parseInt(cpfstring));
-        aluno.setCursadas(listaCursadas);
+        //aluno.setCursadas(listaCursadas);
         aluno.setAndoDeIngresso(Integer.parseInt(anodeingressostring));
         aluno.setPeriodoDeIngresso(Integer.parseInt(periododeingressostring));
         aluno.setQtdDePeriodosTrancado(Integer.parseInt(qtddeperiodostrancadosstring));

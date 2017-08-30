@@ -20,8 +20,17 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.security.PrivateKey;
+import java.util.ArrayList;
+import java.util.UUID;
+
 public class TelaInicialActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ConsultaAoBanco mconsuta;
+    private Button mBtBoasVindas;
+    private Aluno mAluno;
+    private ArrayList<Aluno> mListDeAlunos=new ArrayList<>();
+    private UUID mUUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,28 +38,14 @@ public class TelaInicialActivity extends AppCompatActivity
         setContentView(R.layout.activity_tela_inicial);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-      /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        }); */
+       // mDisciplina = DisciplinaLab.getInstance(getActivity()).getDisciplina(disciplinaId);
 
         TableLayout tl = new TableLayout(this);
         TableLayout.LayoutParams lp = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         tl.setLayoutParams(lp);
-
         TableRow tr = new TableRow(this);
         tl.addView(tr);
         TextView tv;
-       // TextView tv = new TextView(this);
-        //tv.findViewById(R.id.grade_matricula_text_view);
-        //tv.findViewById(R.id.gerar_recomendcoes_text_view);
-        //tv.findViewById(R.id.historico_text_view);
-        //tv.findViewById(R.id.recomendacoes_anteriores_text_view);
 
         tv  = (TextView) findViewById(R.id.grade_curso_text_view);
         tv.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +77,18 @@ public class TelaInicialActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        mconsuta=  ConsultaAoBanco.getInstance(getApplicationContext());
+        mListDeAlunos= (ArrayList<Aluno>) mconsuta.getAlunos();
+        mUUID = (UUID) getIntent().getSerializableExtra("id");
+       // mAluno=mListDeAlunos.get(0);
+        mAluno=mconsuta.getAluno(mUUID);
+        mBtBoasVindas = (Button) findViewById(R.id.boas_vindas_button);
+        mBtBoasVindas.setText(mAluno.getNome()+" seja bem vindo");
+        mBtBoasVindas.setEnabled(false);
+
+
+
+
     }
 
     @Override

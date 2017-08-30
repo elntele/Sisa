@@ -113,12 +113,9 @@ public class DisciplinaFragment extends Fragment {
         mBotao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Exemplo Toast", Toast.LENGTH_SHORT).show();
-              //  mDatabase = new AlunoBaseHelper(mContext)// adicionado para a tabela aluno
-                //        .getWritableDatabase();
                 inicia();
                 addAluno();
-                Intent intent = new Intent(getActivity(),TelaInicialActivity.class);
+                Intent intent = new Intent(getActivity(),LoginActivity.class);
                 startActivity(intent);
             }
         });
